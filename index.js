@@ -103,6 +103,10 @@ exports.getDatabase = function(config) {
       res.type = 'sqlite';
       res.adapter = 'lockit-sql-adapter';
       break;
+    case 'mssql:':
+      res.type = 'mssql';
+      res.adapter = 'lockit-sql-adapter';
+      break;
   }
 
   return res;

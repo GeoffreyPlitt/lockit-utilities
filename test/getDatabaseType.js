@@ -70,4 +70,15 @@ describe('getDatabaseType()', function() {
     done();
   });
 
+  it('should work for MSSSQL', function(done) {
+    var config = {
+      db: {
+        url: 'mssql://'
+      }
+    };
+    var db = utls.getDatabase(config);
+    db.type.should.equal('mssql');
+    db.adapter.should.equal('lockit-sql-adapter');
+    done();
+  });
 });
